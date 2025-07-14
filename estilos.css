@@ -1,60 +1,87 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f0fa;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7e9fb;
+  color: #4b007d;
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 
 h1 {
   text-align: center;
-  color: #6c3483;
+  margin-top: 20px;
+  color: #6a1b9a;
 }
 
 #creditos-contador {
   text-align: center;
-  margin-bottom: 20px;
   font-weight: bold;
+  margin: 10px 0 30px 0;
+  color: #4b007d;
 }
 
-.anio {
-  margin-top: 40px;
-  border-left: 4px solid #bb8fce;
-  padding-left: 15px;
+.year-block {
+  margin-bottom: 50px;
 }
 
-.semestre {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #884ea0;
+.year-title {
+  font-size: 1.6rem;
   font-weight: bold;
+  margin: 30px 0 10px 30px;
+  color: #4b007d;
 }
 
-.malla {
+.period-container {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.period-block {
+  background-color: #e6c8f0;
+  border-radius: 20px;
+  padding: 20px;
+  min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.period-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #4b007d;
 }
 
 .ramo {
-  border: 2px solid #bb8fce;
-  background-color: #e8daef;
-  padding: 10px;
+  background-color: #d0a5e0;
+  border: none;
   border-radius: 10px;
-  width: 220px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
+  padding: 12px;
+  margin: 5px 0;
+  width: 100%;
+  cursor: not-allowed;
+  color: #4b007d;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.ramo.bloqueado {
-  opacity: 0.5;
-  cursor: not-allowed;
+.ramo:hover:enabled {
+  background-color: #bc80d2;
+}
+
+.ramo:enabled {
+  cursor: pointer;
 }
 
 .ramo.aprobado {
-  background-color: #d2b4de;
-  border-color: #a569bd;
-  color: #fff;
+  background-color: #c38ddb !important;
+  color: #ffffff;
+}
+
+.ramo.desbloqueado {
+  background-color: #f3d5ff;
+  cursor: pointer;
 }
