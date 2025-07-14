@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #fdfaff;
+  background-color: #f8f4fb;
   color: #333;
   margin: 0;
   padding: 20px;
@@ -8,49 +8,55 @@ body {
 
 h1 {
   text-align: center;
-  color: #6b3fa0;
+  color: #6a1b9a;
 }
 
 #creditos-contador {
   text-align: center;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #6a1b9a;
 }
 
-.bloque-anio {
-  margin-top: 40px;
-  padding-left: 10px;
-  border-left: 5px solid #bfa2d3;
-}
-
-.bloque-anio h2 {
+.anio {
   font-size: 22px;
-  color: #6b3fa0;
+  margin-top: 40px;
+  color: #6a1b9a;
+  font-weight: bold;
+  border-left: 5px solid #ba68c8;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
-.bloque-periodo h3 {
+.bloque-periodo {
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+.bloque-periodo h2 {
   font-size: 18px;
-  margin: 10px 0;
-  color: #8956c2;
+  margin-bottom: 10px;
+  color: #8e24aa;
 }
 
 .malla {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
-  margin-bottom: 30px;
+  padding-left: 10px;
 }
 
 .ramo {
   padding: 10px;
-  background-color: #e2d4f0;
-  border: 2px solid #c2a9e1;
+  background-color: #e1bee7;
+  border: 2px solid #ce93d8;
   border-radius: 6px;
-  width: 180px;
+  width: fit-content;
+  min-width: 250px;
   text-align: center;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s, border 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .ramo.bloqueado {
@@ -59,7 +65,7 @@ h1 {
 }
 
 .ramo.aprobado {
-  background-color: #b186e2;
-  border-color: #8c5bbf;
+  background-color: #ab47bc;
   color: white;
+  border-color: #8e24aa;
 }
