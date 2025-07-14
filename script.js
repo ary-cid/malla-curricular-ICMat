@@ -40,7 +40,7 @@ const ramos = [
 
   // Semestre 6
   { id: "mfis", nombre: "Metalurgia Física", creditos: 4, requisitos: ["cmat"] },
-  { id: "mm", nombre: "Mecanismo de Materiales", creditos: 4, requisitos: [] },
+  { id: "mm", nombre: "Mecánica de Materiales", creditos: 4, requisitos: [] },
   { id: "tc", nombre: "Transferencia de Calor", creditos: 4, requisitos: ["mf"] },
   { id: "lid", nombre: "Liderazgo y Competencias Emprendedoras", creditos: 3, requisitos: [], creditosRequeridos: 70 },
   { id: "conv", nombre: "Inglés Conversacional", creditos: 3, requisitos: ["ing"] },
