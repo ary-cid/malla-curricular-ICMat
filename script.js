@@ -27,7 +27,7 @@ const ramos = [
   { id: "tdm", nombre: "Termodinámica de Materiales", creditos: 4, requisitos: ["qm"] },
   { id: "ing", nombre: "Inglés Técnico", creditos: 3, requisitos: [] },
   { id: "mfis", nombre: "Metalurgia Física", creditos: 4, requisitos: ["cmat"] },
-  { id: "mm", nombre: "Mecánica de Materiales", creditos: 4, requisitos: [] },
+  { id: "mm", nombre: "Mecanismo de Materiales", creditos: 4, requisitos: [] },
   { id: "tc", nombre: "Transferencia de Calor", creditos: 4, requisitos: ["mf"] },
   { id: "lid", nombre: "Liderazgo y Competencias Emprendedoras", creditos: 3, requisitos: [] },
   { id: "conv", nombre: "Inglés Conversacional", creditos: 3, requisitos: ["ing"] },
