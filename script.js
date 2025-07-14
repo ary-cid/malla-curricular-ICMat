@@ -57,6 +57,8 @@ const ramos = [
   { id: "mem", nombre: "Memoria de Título", creditos: 18, requisitos: ["proj"] }
 ];
 
+let creditosAprobados = 0;
+
 const estructura = {
   "Primer Año": {
     "Trimestre 1": ["imu", "iqu", "ifu"],
@@ -84,32 +86,31 @@ const estructura = {
   }
 };
 
-let creditosAprobados = 0;
-
 function crearMalla() {
   const contenedor = document.getElementById("malla-container");
 
   for (const [anio, periodos] of Object.entries(estructura)) {
-    const bloqueAnio = document.createElement("div");
-    bloqueAnio.classList.add("bloque-anio");
+    const contenedorAnio = document.createElement("div");
+    contenedorAnio.classList.add("anio");
 
     const tituloAnio = document.createElement("h2");
     tituloAnio.innerText = anio;
-    bloqueAnio.appendChild(tituloAnio);
+    contenedorAnio.appendChild(tituloAnio);
 
     for (const [periodo, ids] of Object.entries(periodos)) {
-      const periodoDiv = document.createElement("div");
-      periodoDiv.classList.add("periodo");
+      const bloque = document.createElement("div");
+      bloque.classList.add("bloque-periodo");
 
       const tituloPeriodo = document.createElement("h3");
       tituloPeriodo.innerText = periodo;
-      periodoDiv.appendChild(tituloPeriodo);
+      bloque.appendChild(tituloPeriodo);
 
       const grid = document.createElement("div");
       grid.classList.add("malla");
 
       ids.forEach(id => {
         const ramo = ramos.find(r => r.id === id);
+        if (!ramo) return;
         const div = document.createElement("div");
         div.classList.add("ramo", "bloqueado");
         div.id = ramo.id;
@@ -117,11 +118,11 @@ function crearMalla() {
         grid.appendChild(div);
       });
 
-      periodoDiv.appendChild(grid);
-      bloqueAnio.appendChild(periodoDiv);
+      bloque.appendChild(grid);
+      contenedorAnio.appendChild(bloque);
     }
 
-    contenedor.appendChild(bloqueAnio);
+    contenedor.appendChild(contenedorAnio);
   }
 
   actualizarMalla();
@@ -130,9 +131,8 @@ function crearMalla() {
 function actualizarMalla() {
   ramos.forEach(ramo => {
     const div = document.getElementById(ramo.id);
-    if (!div) return;
-
     const aprobado = div.classList.contains("aprobado");
+
     if (aprobado) return;
 
     const requisitosAprobados = ramo.requisitos.every(req => {
