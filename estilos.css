@@ -1,76 +1,82 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8ecff;
-  color: #4b0082;
-  padding: 20px;
-  margin: 0;
+  margin: 20px;
+  background-color: #fdf6ff;
+  color: #3a044f;
 }
 
 h1 {
   text-align: center;
-  color: #4b0082;
+  color: #6b2d7c;
 }
 
 #creditos-contador {
-  font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-}
-
-.anio {
-  margin-bottom: 40px;
-}
-
-.titulo-anio {
-  font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 10px;
-  border-left: 5px solid #b76aff;
-  padding-left: 10px;
+  color: #4a0561;
 }
 
-.trimestre {
-  background-color: #edd4ff;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  display: inline-block;
-  vertical-align: top;
-  min-width: 200px;
+#malla-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.titulo-trimestre {
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: center;
+.bloque-anio {
+  background-color: #ede0f7;
+  border-left: 8px solid #8a4fc4;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+
+.bloque-anio h2 {
+  color: #5e2b86;
   margin-bottom: 10px;
-  color: #4b0082;
+}
+
+.periodo {
+  margin-bottom: 25px;
+}
+
+.periodo h3 {
+  margin: 10px 0;
+  color: #7326a6;
+  font-size: 18px;
+}
+
+.malla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
 }
 
 .ramo {
-  background-color: #dbacff;
-  border: 2px solid #b76aff;
-  border-radius: 8px;
-  margin: 5px 0;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #e4d3f5;
+  color: #3a044f;
+  border: 1px solid #ccc;
   text-align: center;
+  font-size: 14px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.2s ease;
 }
 
 .ramo:hover {
-  background-color: #c48cff;
+  background-color: #d2b8ed;
 }
 
 .ramo.aprobado {
-  background-color: #b9fbc0;
-  color: #26532b;
-  border-color: #5cc36c;
+  background-color: #b48ae4;
+  color: white;
+  font-weight: bold;
 }
 
 .ramo.bloqueado {
-  background-color: #e8e8e8;
-  color: #aaa;
-  border-color: #ccc;
+  background-color: #d9cce2;
+  color: #999;
   cursor: not-allowed;
 }
