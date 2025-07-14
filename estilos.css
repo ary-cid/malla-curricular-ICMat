@@ -1,91 +1,65 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5e6ff;
-    color: #5a2a82;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdfaff;
+  color: #333;
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
-    text-align: center;
-    padding: 20px;
-    color: #6a1b9a;
+  text-align: center;
+  color: #6b3fa0;
 }
 
-.container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 20px;
+#creditos-contador {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.year-block {
-    background-color: #ecd9fa;
-    border: 1px solid #d1aaff;
-    border-radius: 12px;
-    margin: 10px;
-    padding: 15px;
-    min-width: 240px;
-    flex: 0 0 auto;
+.bloque-anio {
+  margin-top: 40px;
+  padding-left: 10px;
+  border-left: 5px solid #bfa2d3;
 }
 
-.year-block h2 {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 10px;
+.bloque-anio h2 {
+  font-size: 22px;
+  color: #6b3fa0;
 }
 
-.semester-title {
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-align: center;
+.bloque-periodo h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #8956c2;
 }
 
-.subject {
-    background-color: #e1bfff;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.malla {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
-.subject.locked {
-    background-color: #ede7f6;
-    color: #a08cbf;
-    cursor: default;
+.ramo {
+  padding: 10px;
+  background-color: #e2d4f0;
+  border: 2px solid #c2a9e1;
+  border-radius: 6px;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, border 0.3s;
 }
 
-.subject.unlocked:hover {
-    background-color: #dba3ff;
+.ramo.bloqueado {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.approved {
-    background-color: #c084fc !important;
-    color: white;
-}
-
-.subject.unlocked {
-    background-color: #e1bfff;
-}
-
-::-webkit-scrollbar {
-    height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #b388ff;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #f5e6ff;
-}
-
-.credits {
-    padding-left: 20px;
-    font-weight: bold;
-    color: #6a1b9a;
+.ramo.aprobado {
+  background-color: #b186e2;
+  border-color: #8c5bbf;
+  color: white;
 }
