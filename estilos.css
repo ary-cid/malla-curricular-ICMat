@@ -1,87 +1,74 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f7e9fb;
-  color: #4b007d;
+  font-family: Arial, sans-serif;
+  background-color: #f7f3fa;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 h1 {
   text-align: center;
-  margin-top: 20px;
   color: #6a1b9a;
 }
 
 #creditos-contador {
   text-align: center;
   font-weight: bold;
-  margin: 10px 0 30px 0;
-  color: #4b007d;
+  color: #4a148c;
+  margin-bottom: 20px;
 }
 
-.year-block {
-  margin-bottom: 50px;
+.bloque-año {
+  margin-bottom: 40px;
 }
 
-.year-title {
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin: 30px 0 10px 30px;
-  color: #4b007d;
-}
-
-.period-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0 10px;
-}
-
-.period-block {
-  background-color: #e6c8f0;
-  border-radius: 20px;
-  padding: 20px;
-  min-width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.period-title {
-  font-weight: bold;
+.bloque-año > h2 {
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-  color: #4b007d;
+  font-size: 1.8em;
+  color: #6a1b9a;
+  border-bottom: 2px solid #ab47bc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.bloque-periodo {
+  margin-bottom: 20px;
+}
+
+.bloque-periodo > h3 {
+  margin: 10px 0;
+  color: #7b1fa2;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.malla {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .ramo {
-  background-color: #d0a5e0;
-  border: none;
-  border-radius: 10px;
-  padding: 12px;
-  margin: 5px 0;
-  width: 100%;
-  cursor: not-allowed;
-  color: #4b007d;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #d1c4e9; /* color lila por defecto */
+  color: #4a148c;
+  width: 220px;
+  text-align: center;
   font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.ramo:hover:enabled {
-  background-color: #bc80d2;
-}
-
-.ramo:enabled {
   cursor: pointer;
+  border: 2px solid #b39ddb;
+  transition: background-color 0.3s ease;
 }
 
 .ramo.aprobado {
-  background-color: #c38ddb !important;
-  color: #ffffff;
+  background-color: #ce93d8; /* tono más fuerte lila */
+  color: white;
 }
 
-.ramo.desbloqueado {
-  background-color: #f3d5ff;
-  cursor: pointer;
+.ramo.bloqueado {
+  background-color: #ede7f6; /* más claro aún */
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
