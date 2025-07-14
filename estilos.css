@@ -1,12 +1,12 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9fb;
   padding: 20px;
+  background-color: #f4f0f8;
 }
 
 h1 {
   text-align: center;
-  color: #4a0072;
+  color: #4b0082;
 }
 
 #malla-container {
@@ -15,74 +15,50 @@ h1 {
   gap: 40px;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding: 20px 0;
+  padding-bottom: 20px;
 }
 
-.año {
-  display: flex;
-  flex-direction: column;
-  min-width: 300px;
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 12px;
-  background-color: #f3e5f5;
+.anio {
+  min-width: 320px;
 }
 
-.año h2 {
+.anio h2 {
   text-align: center;
-  color: #6a1b9a;
+  color: #4b0082;
   margin-bottom: 10px;
 }
 
 .periodo {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .periodo h3 {
-  text-align: center;
-  color: #7b1fa2;
-  margin: 5px 0;
-}
-
-.columnas-periodo {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-
-.columna {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  margin-bottom: 8px;
+  color: #6a0dad;
 }
 
 .ramo {
-  background-color: #e1bee7;
+  width: 95%;
   padding: 8px;
-  border-radius: 8px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
-  border: 1px solid #b39ddb;
+  background-color: #e6ccff; /* lila pastel */
+  color: #333;
+  font-size: 0.9rem;
+  text-align: left;
 }
 
 .ramo.aprobado {
-  background-color: #ba68c8;
+  background-color: #da70d6; /* orquídea */
   color: white;
 }
 
 .ramo.desbloqueado {
-  background-color: #9575cd;
+  background-color: #b266ff; /* morado */
   color: white;
-}
-
-#creditos-contador {
-  font-weight: bold;
-  color: #4a0072;
-  text-align: center;
-  margin-bottom: 20px;
 }
