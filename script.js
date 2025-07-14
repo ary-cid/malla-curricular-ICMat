@@ -27,7 +27,7 @@ const ramos = [
   { id: "tdm", nombre: "Termodinámica de Materiales", creditos: 4, requisitos: ["qm"] },
   { id: "ing", nombre: "Inglés Técnico", creditos: 3, requisitos: [] },
   { id: "mfis", nombre: "Metalurgia Física", creditos: 4, requisitos: ["cmat"] },
-  { id: "mm", nombre: "Mecanismo de Materiales", creditos: 4, requisitos: [] },
+  { id: "mm", nombre: "Mecánica de Materiales", creditos: 4, requisitos: [] },
   { id: "tc", nombre: "Transferencia de Calor", creditos: 4, requisitos: ["mf"] },
   { id: "lid", nombre: "Liderazgo y Competencias Emprendedoras", creditos: 3, requisitos: [] },
   { id: "conv", nombre: "Inglés Conversacional", creditos: 3, requisitos: ["ing"] },
@@ -76,7 +76,6 @@ const estructura = {
 
 function crearMalla() {
   const contenedor = document.getElementById("malla-container");
-
   for (const [titulo, ids] of Object.entries(estructura)) {
     const bloque = document.createElement("div");
     bloque.classList.add("bloque-periodo");
@@ -85,8 +84,8 @@ function crearMalla() {
     tituloElem.innerText = titulo;
     bloque.appendChild(tituloElem);
 
-    const grid = document.createElement("div");
-    grid.classList.add("malla");
+    const columna = document.createElement("div");
+    columna.classList.add("columna-ramos");
 
     ids.forEach(id => {
       const ramo = ramos.find(r => r.id === id);
@@ -95,10 +94,10 @@ function crearMalla() {
       div.classList.add("ramo", "bloqueado");
       div.id = ramo.id;
       div.innerText = ramo.nombre;
-      grid.appendChild(div);
+      columna.appendChild(div);
     });
 
-    bloque.appendChild(grid);
+    bloque.appendChild(columna);
     contenedor.appendChild(bloque);
   }
 
