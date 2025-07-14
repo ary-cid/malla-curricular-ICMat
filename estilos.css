@@ -1,71 +1,76 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f4fb;
-  color: #333;
-  margin: 0;
+  background-color: #f8ecff;
+  color: #4b0082;
   padding: 20px;
+  margin: 0;
 }
 
 h1 {
   text-align: center;
-  color: #6a1b9a;
+  color: #4b0082;
 }
 
 #creditos-contador {
-  text-align: center;
   font-weight: bold;
+  text-align: center;
   margin-bottom: 20px;
-  color: #6a1b9a;
 }
 
 .anio {
-  font-size: 22px;
-  margin-top: 40px;
-  color: #6a1b9a;
+  margin-bottom: 40px;
+}
+
+.titulo-anio {
+  font-size: 1.5em;
   font-weight: bold;
-  border-left: 5px solid #ba68c8;
-  padding-left: 10px;
   margin-bottom: 10px;
-}
-
-.bloque-periodo {
-  margin-bottom: 20px;
-  padding-left: 15px;
-}
-
-.bloque-periodo h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #8e24aa;
-}
-
-.malla {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  border-left: 5px solid #b76aff;
   padding-left: 10px;
+}
+
+.trimestre {
+  background-color: #edd4ff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 200px;
+}
+
+.titulo-trimestre {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #4b0082;
 }
 
 .ramo {
-  padding: 10px;
-  background-color: #e1bee7;
-  border: 2px solid #ce93d8;
-  border-radius: 6px;
-  width: fit-content;
-  min-width: 250px;
+  background-color: #dbacff;
+  border: 2px solid #b76aff;
+  border-radius: 8px;
+  margin: 5px 0;
+  padding: 8px;
   text-align: center;
   cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
 }
 
-.ramo.bloqueado {
-  opacity: 0.5;
-  cursor: not-allowed;
+.ramo:hover {
+  background-color: #c48cff;
 }
 
 .ramo.aprobado {
-  background-color: #ab47bc;
-  color: white;
-  border-color: #8e24aa;
+  background-color: #b9fbc0;
+  color: #26532b;
+  border-color: #5cc36c;
+}
+
+.ramo.bloqueado {
+  background-color: #e8e8e8;
+  color: #aaa;
+  border-color: #ccc;
+  cursor: not-allowed;
 }
