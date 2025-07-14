@@ -1,5 +1,3 @@
-// === script.js ===
-
 const ramos = [
   { id: "imu", nombre: "Introducción a la Matemática Universitaria", creditos: 6, requisitos: [] },
   { id: "iqu", nombre: "Introducción a la Química Universitaria", creditos: 3, requisitos: [] },
@@ -59,8 +57,6 @@ const ramos = [
   { id: "mem", nombre: "Memoria de Título", creditos: 18, requisitos: ["proj"] }
 ];
 
-let creditosAprobados = 0;
-
 const estructura = {
   "Primer Año – Trimestre 1": ["imu", "iqu", "ifu"],
   "Primer Año – Trimestre 2": ["a1", "c1", "q1", "f1"],
@@ -76,32 +72,30 @@ const estructura = {
   "Sexto Año – Semestre 11": ["mem"]
 };
 
+let creditosAprobados = 0;
+
 function crearMalla() {
   const contenedor = document.getElementById("malla-container");
+  contenedor.innerHTML = ""; // Limpiar antes de generar
 
   for (const [titulo, ids] of Object.entries(estructura)) {
-    const bloque = document.createElement("div");
-    bloque.classList.add("bloque-periodo");
+    const columna = document.createElement("div");
+    columna.classList.add("columna-periodo");
 
-    const tituloElem = document.createElement("h2");
+    const tituloElem = document.createElement("h3");
     tituloElem.innerText = titulo;
-    bloque.appendChild(tituloElem);
-
-    const grid = document.createElement("div");
-    grid.classList.add("malla-columna");
+    columna.appendChild(tituloElem);
 
     ids.forEach(id => {
       const ramo = ramos.find(r => r.id === id);
-      if (!ramo) return;
       const div = document.createElement("div");
       div.classList.add("ramo", "bloqueado");
       div.id = ramo.id;
       div.innerText = ramo.nombre;
-      grid.appendChild(div);
+      columna.appendChild(div);
     });
 
-    bloque.appendChild(grid);
-    contenedor.appendChild(bloque);
+    contenedor.appendChild(columna);
   }
 
   actualizarMalla();
@@ -110,8 +104,8 @@ function crearMalla() {
 function actualizarMalla() {
   ramos.forEach(ramo => {
     const div = document.getElementById(ramo.id);
+    if (!div) return;
     const aprobado = div.classList.contains("aprobado");
-    if (aprobado) return;
 
     const requisitosAprobados = ramo.requisitos.every(req => {
       const reqDiv = document.getElementById(req);
