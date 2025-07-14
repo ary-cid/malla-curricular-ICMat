@@ -1,3 +1,5 @@
+// === script.js ===
+
 const ramos = [
   { id: "imu", nombre: "Introducción a la Matemática Universitaria", creditos: 6, requisitos: [] },
   { id: "iqu", nombre: "Introducción a la Química Universitaria", creditos: 3, requisitos: [] },
@@ -76,6 +78,7 @@ const estructura = {
 
 function crearMalla() {
   const contenedor = document.getElementById("malla-container");
+
   for (const [titulo, ids] of Object.entries(estructura)) {
     const bloque = document.createElement("div");
     bloque.classList.add("bloque-periodo");
@@ -84,8 +87,8 @@ function crearMalla() {
     tituloElem.innerText = titulo;
     bloque.appendChild(tituloElem);
 
-    const columna = document.createElement("div");
-    columna.classList.add("columna-ramos");
+    const grid = document.createElement("div");
+    grid.classList.add("malla-columna");
 
     ids.forEach(id => {
       const ramo = ramos.find(r => r.id === id);
@@ -94,10 +97,10 @@ function crearMalla() {
       div.classList.add("ramo", "bloqueado");
       div.id = ramo.id;
       div.innerText = ramo.nombre;
-      columna.appendChild(div);
+      grid.appendChild(div);
     });
 
-    bloque.appendChild(columna);
+    bloque.appendChild(grid);
     contenedor.appendChild(bloque);
   }
 
