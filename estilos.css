@@ -1,82 +1,73 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #fdf6ff;
-  color: #3a044f;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5e9fc;
+  color: #4b0082;
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
   text-align: center;
-  color: #6b2d7c;
+  color: #6a1b9a;
 }
 
 #creditos-contador {
   text-align: center;
-  margin-bottom: 20px;
   font-weight: bold;
-  color: #4a0561;
+  margin-bottom: 30px;
 }
 
-#malla-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  max-width: 1300px;
-  margin: 0 auto;
+.año {
+  margin-bottom: 60px;
 }
 
-.bloque-anio {
-  background-color: #ede0f7;
-  border-left: 8px solid #8a4fc4;
-  padding: 10px 20px;
-  border-radius: 12px;
-}
-
-.bloque-anio h2 {
-  color: #5e2b86;
+.año h2 {
+  font-size: 1.2rem;
+  color: #4b0082;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
-.periodo {
+.trimestre {
   margin-bottom: 25px;
 }
 
-.periodo h3 {
-  margin: 10px 0;
-  color: #7326a6;
-  font-size: 18px;
+.trimestre h3 {
+  font-size: 1.3rem;
+  color: #4b0082;
+  margin-bottom: 10px;
+  margin-left: 20px;
 }
 
-.malla {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 10px;
+.contenedor-trimestres {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.contenedor-ramos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0 20px;
 }
 
 .ramo {
-  padding: 10px;
+  padding: 15px;
+  background-color: #d1a8f3;
   border-radius: 10px;
-  background-color: #e4d3f5;
-  color: #3a044f;
-  border: 1px solid #ccc;
   text-align: center;
-  font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.ramo:hover {
-  background-color: #d2b8ed;
+  min-width: 200px;
+  flex-grow: 1;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
 }
 
 .ramo.aprobado {
-  background-color: #b48ae4;
-  color: white;
-  font-weight: bold;
-}
-
-.ramo.bloqueado {
-  background-color: #d9cce2;
-  color: #999;
-  cursor: not-allowed;
+  background-color: #cfcfcf;
+  color: #7a7a7a;
+  cursor: default;
+  text-decoration: line-through;
 }
