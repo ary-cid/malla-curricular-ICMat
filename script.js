@@ -58,28 +58,28 @@ const ramos = [
 ];
 
 const estructura = {
-  "1° AÑO": {
+  "Primer Año": {
     "Trimestre 1": ["imu", "iqu", "ifu"],
     "Trimestre 2": ["a1", "c1", "q1", "f1"],
     "Trimestre 3": ["a2", "c2", "q2", "f2"]
   },
-  "2° AÑO": {
+  "Segundo Año": {
     "Semestre 3": ["c3", "edo", "est", "cp", "qai"],
     "Semestre 4": ["cc", "mec", "cn", "dac", "iim", "qm"]
   },
-  "3° AÑO": {
+  "Tercer Año": {
     "Semestre 5": ["cmat", "mf", "emi", "tdm", "ing"],
     "Semestre 6": ["mfis", "mm", "tc", "lid", "conv"]
   },
-  "4° AÑO": {
+  "Cuarto Año": {
     "Semestre 7": ["tf", "fdp", "mfnf", "eco", "cme"],
     "Semestre 8": ["fm", "pm", "carac", "ge", "corr", "vi"]
   },
-  "5° AÑO": {
+  "Quinto Año": {
     "Semestre 9": ["af", "cmet", "prot", "fep", "cpcc", "e1"],
     "Semestre 10": ["sm", "rec", "lsma", "proj", "cgc", "e2"]
   },
-  "6° AÑO": {
+  "Sexto Año": {
     "Semestre 11": ["mem"]
   }
 };
@@ -89,26 +89,27 @@ let creditosAprobados = 0;
 function crearMalla() {
   const contenedor = document.getElementById("malla-container");
 
-  for (const [anio, bloques] of Object.entries(estructura)) {
-    const anioElem = document.createElement("div");
-    anioElem.classList.add("anio");
-    anioElem.innerText = anio;
-    contenedor.appendChild(anioElem);
+  for (const [anio, periodos] of Object.entries(estructura)) {
+    const bloqueAnio = document.createElement("div");
+    bloqueAnio.classList.add("bloque-anio");
 
-    for (const [titulo, ids] of Object.entries(bloques)) {
-      const bloque = document.createElement("div");
-      bloque.classList.add("bloque-periodo");
+    const tituloAnio = document.createElement("h2");
+    tituloAnio.innerText = anio;
+    bloqueAnio.appendChild(tituloAnio);
 
-      const tituloElem = document.createElement("h2");
-      tituloElem.innerText = titulo;
-      bloque.appendChild(tituloElem);
+    for (const [periodo, ids] of Object.entries(periodos)) {
+      const periodoDiv = document.createElement("div");
+      periodoDiv.classList.add("periodo");
+
+      const tituloPeriodo = document.createElement("h3");
+      tituloPeriodo.innerText = periodo;
+      periodoDiv.appendChild(tituloPeriodo);
 
       const grid = document.createElement("div");
       grid.classList.add("malla");
 
       ids.forEach(id => {
         const ramo = ramos.find(r => r.id === id);
-        if (!ramo) return;
         const div = document.createElement("div");
         div.classList.add("ramo", "bloqueado");
         div.id = ramo.id;
@@ -116,9 +117,11 @@ function crearMalla() {
         grid.appendChild(div);
       });
 
-      bloque.appendChild(grid);
-      contenedor.appendChild(bloque);
+      periodoDiv.appendChild(grid);
+      bloqueAnio.appendChild(periodoDiv);
     }
+
+    contenedor.appendChild(bloqueAnio);
   }
 
   actualizarMalla();
@@ -127,6 +130,8 @@ function crearMalla() {
 function actualizarMalla() {
   ramos.forEach(ramo => {
     const div = document.getElementById(ramo.id);
+    if (!div) return;
+
     const aprobado = div.classList.contains("aprobado");
     if (aprobado) return;
 
