@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Curricular Interactiva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .malla {
+      display: grid;
+      grid-template-columns: repeat(6, 150px);
+      gap: 10px;
+      margin: 20px;
+    }
+    .ramo {
+      padding: 10px;
+      border: 1px solid #aaa;
+      background-color: #e0f7fa;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    .ramo:hover {
+      background-color: #b2ebf2;
+    }
+    #info {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Malla Curricular de Ingeniería Civil en Materiales</h1>
+  <div class="malla" id="malla">
+    <!-- Ejemplo de ramos -->
+    <div class="ramo" data-info="Nombre: Cálculo I\nCréditos: 6\nPrerrequisito: Ninguno">Cálculo I</div>
+    <div class="ramo" data-info="Nombre: Álgebra Lineal\nCréditos: 5\nPrerrequisito: Ninguno">Álgebra</div>
+    <div class="ramo" data-info="Nombre: Física I\nCréditos: 5\nPrerrequisito: Cálculo I">Física I</div>
+    <div class="ramo" data-info="Nombre: Materiales I\nCréditos: 4\nPrerrequisito: Física I">Materiales I</div>
+  </div>
+
+  <div id="info"></div>
+
+  <script>
+    const ramos = document.querySelectorAll(".ramo");
+    const infoBox = document.getElementById("info");
+
+    ramos.forEach(ramo => {
+      ramo.addEventListener("click", () => {
+        infoBox.innerText = ramo.getAttribute("data-info");
+        infoBox.style.display = "block";
+      });
+    });
+  </script>
+</body>
+</html>
